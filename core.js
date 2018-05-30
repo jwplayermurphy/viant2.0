@@ -21,6 +21,9 @@ function createJWPlayer() {
 
     g = document.createElement('div');
     g.setAttribute("id", "jwplayer_video_container");
+    if(!document.getElementById("jwplayer_video_container")) {
+  document.write("<div id='jwplayer_video_container'></div>");
+}
 
 }
 
@@ -110,5 +113,5 @@ function buildJW(jwplayer, playlistUrl) {
     xmlhttp.send();
 }
 createJWPlayer();
-//injectScript();
+injectScript();
 buildJW(jwplayer, "https://cdn.jwplayer.com/v2/playlists/b53dbsV1");
