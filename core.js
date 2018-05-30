@@ -14,14 +14,13 @@ function injectScript() {
     const s = document.createElement("script");
     s.type = "text/javascript";
     s.src = "https://content.jwplatform.com/libraries/nYLmRo1U.js";
+    s.onload = buildJW.bind(null, "playlistUrl");
     document.head.append(s);
 }
 
 function createJWPlayer() {
-
     g = document.createElement('div');
     g.setAttribute("id", "jwplayer_video_container");
-
 }
 
 function fireTag(tag, id) {
@@ -34,7 +33,7 @@ function fireTag(tag, id) {
     xhttp.send();
 }
 
-function buildJW(jwplayer, playlistUrl) {
+function buildJW(playlistUrl) {
     var playerInstance = jwplayer("jwplayer_video_container");
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -109,6 +108,6 @@ function buildJW(jwplayer, playlistUrl) {
     xmlhttp.open("GET", playlistUrl, true);
     xmlhttp.send();
 }
+
+injectScript();
 createJWPlayer();
-//injectScript();
-buildJW(jwplayer, "https://cdn.jwplayer.com/v2/playlists/b53dbsV1");
