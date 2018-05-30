@@ -14,7 +14,7 @@ function injectScript() {
     const s = document.createElement("script");
     s.type = "text/javascript";
     s.src = "https://content.jwplatform.com/libraries/nYLmRo1U.js";
-    s.onload = buildJW("playlistUrl");
+    s.onload = buildJW.bind(null, "playlistUrl");
     document.head.append(s);
 }
 
