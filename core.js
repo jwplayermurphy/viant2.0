@@ -18,6 +18,13 @@ function injectScript() {
     document.head.append(s);
 }
 
+function injectMoat() {
+    const z = document.createElement("script");
+    z.type = "text/javascript";
+    z.src = "https://z.moatads.com/jwplayerplugin0938452/moatplugin.js";
+    document.head.append(z);
+}
+
 function createJWPlayer() {
     g = document.createElement('div');
     g.setAttribute("id", "jwplayer_video_container");
@@ -84,6 +91,7 @@ function buildJW(playlistUrl) {
                     var thirtySec = false;
 
                     playerInstance.on("time", function () {
+                        console.log("time");
                         var currentPosition = playerInstance.getPosition()
                         if (Math.floor(currentPosition) >= 3 && !threeSec) {
                             fireTag(
@@ -104,6 +112,11 @@ function buildJW(playlistUrl) {
                             thirtySec = true;
                         };
                     });
+                    playerInstance.on(''), function(){
+
+                        console.log("fired!");
+                        moatjw.add({partnercode:"viantjwplayer764158861377",player:this,adImpressionEvent:event});
+                    };
                 }
             }
         }
@@ -112,5 +125,6 @@ function buildJW(playlistUrl) {
     xmlhttp.send();
 }
 
+injectMoat();
 injectScript();
 createJWPlayer();
