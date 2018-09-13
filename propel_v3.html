@@ -1,5 +1,4 @@
 <div id="jwplayer_video_container"></div>
-<script type="text/javascript" src="https://z.moatads.com/jwplayerplugin0938452/moatplugin.js"></script>
 <script type="text/javascript" src="https://content.jwplatform.com/libraries/WAy5k0e2.js"></script>
 <script>
 
@@ -75,15 +74,6 @@
                                     mediaid);
                                 thirtySec = true;
                             };
-                        });
-                        playerInstance.on("adImpression", function (event) {
-                            console.log("fired!");
-                            currentAdId = moatjw.add({
-                                partnerCode:"viantjwplayer764158861377",
-                                player:this,
-                                adImpressionEvent: event
-                            });
-                            console.log(currentAdId);
                         });
                     }
                 }
