@@ -12,7 +12,7 @@ switch ($network) {
         break;
 
     case 'connatix-ima':
-        $doc = "connatix_ima_v3.html";
+        $doc = "connatix_googima_v3.html";
         break;
 
     case 'connatix-vast':
@@ -20,8 +20,12 @@ switch ($network) {
         break;    
 
     case 'nativo-ima':
-        $doc = "connatix_ima_v3.html";
+        $doc = "nativo_googima_v3.html";
         break;
+
+    case 'nativo-vast':
+        $doc = "nativo_vast_v3.html";
+        break;    
         
     case 'town-news':
         $doc = "townNews_v2.html";
